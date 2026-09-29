@@ -14,7 +14,15 @@ X_val, X_test, y_val, y_test = train_test_split(X_hold, y_hold,
                                                    random_state=41, 
                                                    stratify=y_hold)
 
-for depth in [1, 2, 3, 4, 5]:
+best_depth, best_score = None, -1
+for depth in [1, 2,3, 4, 5]:
     model=DecisionTreeClassifier(max_depth=depth, random_state=0)
     model.fit(X_train, y_train)
-    print("max_depth = ", depth, "-> validation accuracy: ", round(model.score(X_val, y_val), 2))
+    score= model.score(X_val, y_val)
+    if score>best_score:
+        best_depth, best_score = depth, score
+
+final_model = DecisionTreeClassifier(max_depth=best_depth, random_state=0)
+final_model.fit(X_train, y_train)
+print("Chosen max_depth: ", best_depth)
+print("Final test accuracy: ", round(final_model.score(X_test, y_test),2))
