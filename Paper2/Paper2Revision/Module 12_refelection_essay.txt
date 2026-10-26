@@ -1,0 +1,5 @@
+Module 12 taught me that machine learning is more than choosing an algorithm; it is a disciplined process. I began with unsupervised learning, discovering how K-Means and hierarchical clustering can reveal customer segments without labels, and how PCA simplifies high-dimensional data while keeping its most important variation. Feature engineering showed me that well-created, transformed and encoded features often matter more than the model itself.
+
+The second half shifted my focus to trustworthy evaluation. Precision, recall and F1 exposed why accuracy can mislead on imbalanced data, while cross validation and hyperparameter tuning taught me to measure performance fairly and improve it systematically. The most valuable lesson was data leakage: every scaler, encoder and selector must learn from training data only.
+
+Finally, end-to-end pipelines tied everything together into one reproducible workflow. This module changed how I think: I now question every result, validate carefully, and build models I can trust and explain.
